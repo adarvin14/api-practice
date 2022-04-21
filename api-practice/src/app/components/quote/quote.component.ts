@@ -8,10 +8,17 @@ import { QuoteService } from 'src/app/services/quote.service';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  quotes: any;
 
   constructor(private quoteService: QuoteService) { }
 
   ngOnInit(): void {
   }
 
+  getRandomQuote(){
+    this.quoteService.getQuotes().subscribe((response: any) => {
+      this.quotes = response;
+      console.log(response);
+    })
+  }
 }
