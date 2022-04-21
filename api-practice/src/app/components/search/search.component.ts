@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuoteService } from 'src/app/services/quote.service';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  quotes: any;
 
-  constructor() { }
+  constructor(private quoteService: QuoteService) { }
 
   ngOnInit(): void {
+  }
+
+  term: string = '';
+
+  setSearchStr(e: any) {
+    this.term = e.target.value;
+  }
+
+  searchByTerm(){
+    this.quoteService.getQuotesBySerchTerm(this.term).subscribe((response: any) => {
+        this.quotes = response;
+        console.log(response);
+      }
+    )
+    
   }
 
 }
