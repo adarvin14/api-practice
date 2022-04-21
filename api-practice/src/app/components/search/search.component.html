@@ -11,5 +11,9 @@
 <br>
 
 <div>
-    {{quotes}}
+    <ul>
+        <li *ngFor="let quote of quotes; let i = index" [attr.data-index]="i">
+            {{quotes[i]}}
+        </li>
+    </ul>
 </div>
