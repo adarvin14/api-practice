@@ -1,9 +1,13 @@
-.button{
-    margin: auto;
+button{
+    margin-left:25%;
+    margin-right:25%;
 }
 #random{
     padding: 4px;
     font-size: 24px;
     background-color: white;
     color: rgb(0, 0, 0);
+}
+#quote{
+    text-align: center;
 }

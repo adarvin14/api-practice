@@ -1,4 +1,11 @@
+#search{
+    margin-left:25%;
+    margin-right:25%;
+}
 #submit_search{
     background-color: white;
     color: rgb(0, 0, 0);
+}
+#results{
+    text-align: center;
 }

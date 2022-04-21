@@ -1,6 +1,6 @@
 <p>Welcome to the Ron Swanson Quote Finder! Search a term in the text box below to find some quotes!</p>
 
-<div>
+<div id="search">
     <input type="text" id="term" (change)="setSearchStr($event)" placeholder="Look for a quote">
     <input type="submit" id="submit_search" (click)="searchByTerm()">
 
@@ -9,8 +9,7 @@
 
 <div>
     <ul>
-        <li *ngFor="let quote of quotes; let i = index" [attr.data-index]="i">
+        <p id="results" *ngFor="let quote of quotes; let i = index" [attr.data-index]="i">
             {{quotes[i]}}
-        </li>
     </ul>
 </div>
